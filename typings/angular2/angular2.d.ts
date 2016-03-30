@@ -1005,7 +1005,7 @@ declare module 'angular2/src/core/change_detection/constants' {
 
 }
 declare module 'angular2/src/core/change_detection/directive_record' {
-	import { ChangeDetectionStrategy } from './constants';
+	import { ChangeDetectionStrategy } from 'angular2/src/core/change_detection/constants';
 	export class DirectiveIndex {
 	    elementIndex: number;
 	    directiveIndex: number;
@@ -1043,8 +1043,8 @@ declare module 'angular2/src/core/change_detection/directive_record' {
 }
 declare module 'angular2/src/core/change_detection/binding_record' {
 	import { SetterFn } from 'angular2/src/core/reflection/types';
-	import { AST } from './parser/ast';
-	import { DirectiveIndex, DirectiveRecord } from './directive_record';
+	import { AST } from 'angular2/src/core/change_detection//parser/ast';
+	import { DirectiveIndex, DirectiveRecord } from 'angular2/src/core/change_detection/directive_record';
 	export class BindingTarget {
 	    mode: string;
 	    elementIndex: number;
@@ -1090,11 +1090,11 @@ declare module 'angular2/src/core/change_detection/binding_record' {
 
 }
 declare module 'angular2/src/core/change_detection/interfaces' {
-	import { Locals } from './parser/locals';
-	import { BindingTarget, BindingRecord } from './binding_record';
-	import { DirectiveRecord, DirectiveIndex } from './directive_record';
-	import { ChangeDetectionStrategy } from './constants';
-	import { ChangeDetectorRef } from './change_detector_ref';
+	import { Locals } from 'angular2/src/core/change_detection/parser/locals';
+	import { BindingTarget, BindingRecord } from 'angular2/src/core/change_detection/binding_record';
+	import { DirectiveRecord, DirectiveIndex } from 'angular2/src/core/change_detection/directive_record';
+	import { ChangeDetectionStrategy } from 'angular2/src/core/change_detection/constants';
+	import { ChangeDetectorRef } from 'angular2/src/core/change_detection/change_detector_ref';
 	export class DebugContext {
 	    element: any;
 	    componentElement: any;
@@ -1154,7 +1154,7 @@ declare module 'angular2/src/core/change_detection/interfaces' {
 
 }
 declare module 'angular2/src/core/change_detection/change_detector_ref' {
-	import { ChangeDetector } from './interfaces';
+	import { ChangeDetector } from 'angular2/src/core/change_detection/interfaces';
 	export abstract class ChangeDetectorRef {
 	    /**
 	     * Marks all {@link ChangeDetectionStrategy#OnPush} ancestors as to be checked.
@@ -1355,7 +1355,7 @@ declare module 'angular2/src/core/change_detection/change_detector_ref' {
 
 }
 declare module 'angular2/src/core/di/decorators' {
-	import { InjectMetadata, OptionalMetadata, InjectableMetadata, SelfMetadata, HostMetadata, SkipSelfMetadata } from './metadata';
+	import { InjectMetadata, OptionalMetadata, InjectableMetadata, SelfMetadata, HostMetadata, SkipSelfMetadata } from 'angular2/src/core/di/metadata';
 	/**
 	 * Factory for creating {@link InjectMetadata}.
 	 */
@@ -1504,7 +1504,7 @@ declare module 'angular2/src/core/di/key' {
 }
 declare module 'angular2/src/core/di/provider' {
 	import { Type } from 'angular2/src/facade/lang';
-	import { Key } from './key';
+	import { Key } from 'angular2/src/core/di/key';
 	/**
 	 * `Dependency` is used by the framework to extend DI.
 	 * This is internal to Angular and should not be used directly.
@@ -1942,7 +1942,7 @@ declare module 'angular2/src/core/di/provider' {
 
 }
 declare module 'angular2/src/core/di/injector' {
-	import { ResolvedProvider, Provider, Dependency } from './provider';
+	import { ResolvedProvider, Provider, Dependency } from 'angular2/src/core/di/provider';
 	import { Type } from 'angular2/src/facade/lang';
 	export const UNDEFINED: Object;
 	/**
@@ -2414,8 +2414,8 @@ declare module 'angular2/src/facade/exception_handler' {
 
 }
 declare module 'angular2/src/facade/exceptions' {
-	import { BaseWrappedException } from './base_wrapped_exception';
-	export { ExceptionHandler } from './exception_handler';
+	import { BaseWrappedException } from 'angular2/src/facade/base_wrapped_exception';
+	export { ExceptionHandler } from 'angular2/src/facade/exception_handler';
 	export class BaseException extends Error {
 	    message: string;
 	    stack: any;
@@ -2446,8 +2446,8 @@ declare module 'angular2/src/facade/exceptions' {
 }
 declare module 'angular2/src/core/di/exceptions' {
 	import { BaseException, WrappedException } from 'angular2/src/facade/exceptions';
-	import { Key } from './key';
-	import { Injector } from './injector';
+	import { Key } from 'angular2/src/core/di/key';
+	import { Injector } from 'angular2/src/core/di/injector';
 	/**
 	 * Base class for all errors arising from misconfigured providers.
 	 */
@@ -2638,18 +2638,18 @@ declare module 'angular2/src/core/di' {
 	 * @description
 	 * The `di` module provides dependency injection container services.
 	 */
-	export { InjectMetadata, OptionalMetadata, InjectableMetadata, SelfMetadata, HostMetadata, SkipSelfMetadata, DependencyMetadata } from './di/metadata';
-	export * from './di/decorators';
-	export { forwardRef, resolveForwardRef, ForwardRefFn } from './di/forward_ref';
-	export { Injector } from './di/injector';
-	export { Binding, ProviderBuilder, ResolvedBinding, ResolvedFactory, Dependency, bind, Provider, ResolvedProvider, provide } from './di/provider';
-	export { Key } from './di/key';
-	export { NoProviderError, AbstractProviderError, CyclicDependencyError, InstantiationError, InvalidProviderError, NoAnnotationError, OutOfBoundsError } from './di/exceptions';
-	export { OpaqueToken } from './di/opaque_token';
+	export { InjectMetadata, OptionalMetadata, InjectableMetadata, SelfMetadata, HostMetadata, SkipSelfMetadata, DependencyMetadata } from 'angular2/src/core/di/metadata';
+	export * from 'angular2/src/core/di/decorators';
+	export { forwardRef, resolveForwardRef, ForwardRefFn } from 'angular2/src/core/di/forward_ref';
+	export { Injector } from 'angular2/src/core/di/injector';
+	export { Binding, ProviderBuilder, ResolvedBinding, ResolvedFactory, Dependency, bind, Provider, ResolvedProvider, provide } from 'angular2/src/core/di/provider';
+	export { Key } from 'angular2/src/core/di/key';
+	export { NoProviderError, AbstractProviderError, CyclicDependencyError, InstantiationError, InvalidProviderError, NoAnnotationError, OutOfBoundsError } from 'angular2/src/core/di/exceptions';
+	export { OpaqueToken } from 'angular2/src/core/di/opaque_token';
 
 }
 declare module 'angular2/src/core/change_detection/differs/iterable_differs' {
-	import { ChangeDetectorRef } from '../change_detector_ref';
+	import { ChangeDetectorRef } from 'angular2/src/core/change_detection/change_detector_ref';
 	import { Provider } from 'angular2/src/core/di';
 	/**
 	 * A strategy for tracking changes over time to an iterable. Used for {@link NgFor} to
@@ -2705,7 +2705,7 @@ declare module 'angular2/src/core/change_detection/differs/iterable_differs' {
 
 }
 declare module 'angular2/src/core/change_detection/differs/keyvalue_differs' {
-	import { ChangeDetectorRef } from '../change_detector_ref';
+	import { ChangeDetectorRef } from 'angular2/src/core/change_detection/change_detector_ref';
 	import { Provider } from 'angular2/src/core/di';
 	/**
 	 * A differ that tracks changes made to an object over time.
@@ -2753,8 +2753,8 @@ declare module 'angular2/src/core/change_detection/differs/keyvalue_differs' {
 
 }
 declare module 'angular2/src/core/change_detection/differs/default_keyvalue_differ' {
-	import { ChangeDetectorRef } from '../change_detector_ref';
-	import { KeyValueDiffer, KeyValueDifferFactory } from '../differs/keyvalue_differs';
+	import { ChangeDetectorRef } from 'angular2/src/core/change_detection/change_detector_ref';
+	import { KeyValueDiffer, KeyValueDifferFactory } from 'angular2/src/core/change_detection/differs/keyvalue_differs';
 	export class DefaultKeyValueDifferFactory implements KeyValueDifferFactory {
 	    supports(obj: any): boolean;
 	    create(cdRef: ChangeDetectorRef): KeyValueDiffer;
@@ -2790,8 +2790,8 @@ declare module 'angular2/src/core/change_detection/differs/default_keyvalue_diff
 
 }
 declare module 'angular2/src/core/change_detection/differs/default_iterable_differ' {
-	import { ChangeDetectorRef } from '../change_detector_ref';
-	import { IterableDiffer, IterableDifferFactory, TrackByFn } from '../differs/iterable_differs';
+	import { ChangeDetectorRef } from 'angular2/src/core/change_detection/change_detector_ref';
+	import { IterableDiffer, IterableDifferFactory, TrackByFn } from 'angular2/src/core/change_detection/differs/iterable_differs';
 	export class DefaultIterableDifferFactory implements IterableDifferFactory {
 	    supports(obj: Object): boolean;
 	    create(cdRef: ChangeDetectorRef, trackByFn?: TrackByFn): DefaultIterableDiffer;
@@ -2916,7 +2916,7 @@ declare module 'angular2/src/core/change_detection/parser/lexer' {
 }
 declare module 'angular2/src/core/reflection/platform_reflection_capabilities' {
 	import { Type } from 'angular2/src/facade/lang';
-	import { GetterFn, SetterFn, MethodFn } from './types';
+	import { GetterFn, SetterFn, MethodFn } from 'angular2/src/core/reflection/types';
 	export interface PlatformReflectionCapabilities {
 	    isReflectionEnabled(): boolean;
 	    factory(type: Type): Function;
@@ -2935,10 +2935,10 @@ declare module 'angular2/src/core/reflection/platform_reflection_capabilities' {
 }
 declare module 'angular2/src/core/reflection/reflector' {
 	import { Type } from 'angular2/src/facade/lang';
-	import { SetterFn, GetterFn, MethodFn } from './types';
-	import { PlatformReflectionCapabilities } from './platform_reflection_capabilities';
-	export { SetterFn, GetterFn, MethodFn } from './types';
-	export { PlatformReflectionCapabilities } from './platform_reflection_capabilities';
+	import { SetterFn, GetterFn, MethodFn } from 'angular2/src/core/reflection/types';
+	import { PlatformReflectionCapabilities } from 'angular2/src/core/reflection/platform_reflection_capabilities';
+	export { SetterFn, GetterFn, MethodFn } from 'angular2/src/core/reflection/types';
+	export { PlatformReflectionCapabilities } from 'angular2/src/core/reflection/platform_reflection_capabilities';
 	/**
 	 * Reflective information about a symbol, including annotations, interfaces, and other metadata.
 	 */
@@ -2999,8 +2999,8 @@ declare module 'angular2/src/core/reflection/reflector' {
 
 }
 declare module 'angular2/src/core/reflection/reflection' {
-	import { Reflector } from './reflector';
-	export { Reflector, ReflectionInfo } from './reflector';
+	import { Reflector } from 'angular2/src/core/reflection/reflector';
+	export { Reflector, ReflectionInfo } from 'angular2/src/core/reflection/reflector';
 	/**
 	 * The {@link Reflector} used internally in Angular to access metadata
 	 * about symbols.
@@ -3009,9 +3009,9 @@ declare module 'angular2/src/core/reflection/reflection' {
 
 }
 declare module 'angular2/src/core/change_detection/parser/parser' {
-	import { Lexer, Token } from './lexer';
+	import { Lexer, Token } from 'angular2/src/core/change_detection/parser/lexer';
 	import { Reflector } from 'angular2/src/core/reflection/reflection';
-	import { AST, BindingPipe, LiteralMap, TemplateBinding, ASTWithSource } from './ast';
+	import { AST, BindingPipe, LiteralMap, TemplateBinding, ASTWithSource } from 'angular2/src/core/change_detection/parser/ast';
 	export class Parser {
 	    /** @internal */ _lexer: Lexer;
 	    constructor(/** @internal */ _lexer: Lexer, providedReflector?: Reflector);
@@ -3179,8 +3179,8 @@ declare module 'angular2/src/core/change_detection/exceptions' {
 
 }
 declare module 'angular2/src/core/change_detection/proto_record' {
-	import { BindingRecord } from './binding_record';
-	import { DirectiveIndex } from './directive_record';
+	import { BindingRecord } from 'angular2/src/core/change_detection/binding_record';
+	import { DirectiveIndex } from 'angular2/src/core/change_detection/directive_record';
 	export enum RecordType {
 	    Self = 0,
 	    Const = 1,
@@ -3231,8 +3231,8 @@ declare module 'angular2/src/core/change_detection/proto_record' {
 
 }
 declare module 'angular2/src/core/change_detection/event_binding' {
-	import { DirectiveIndex } from './directive_record';
-	import { ProtoRecord } from './proto_record';
+	import { DirectiveIndex } from 'angular2/src/core/change_detection/directive_record';
+	import { ProtoRecord } from 'angular2/src/core/change_detection/proto_record';
 	export class EventBinding {
 	    eventName: string;
 	    elIndex: number;
@@ -3243,10 +3243,10 @@ declare module 'angular2/src/core/change_detection/event_binding' {
 
 }
 declare module 'angular2/src/core/change_detection/proto_change_detector' {
-	import { ChangeDetector, ProtoChangeDetector, ChangeDetectorDefinition } from './interfaces';
-	import { BindingRecord } from './binding_record';
-	import { EventBinding } from './event_binding';
-	import { ProtoRecord } from './proto_record';
+	import { ChangeDetector, ProtoChangeDetector, ChangeDetectorDefinition } from 'angular2/src/core/change_detection/interfaces';
+	import { BindingRecord } from 'angular2/src/core/change_detection/binding_record';
+	import { EventBinding } from 'angular2/src/core/change_detection/event_binding';
+	import { ProtoRecord } from 'angular2/src/core/change_detection/proto_record';
 	export class DynamicProtoChangeDetector implements ProtoChangeDetector {
 	    private _definition;
 	    constructor(_definition: ChangeDetectorDefinition);
@@ -3261,7 +3261,7 @@ declare module 'angular2/src/core/change_detection/proto_change_detector' {
 
 }
 declare module 'angular2/src/core/change_detection/jit_proto_change_detector' {
-	import { ProtoChangeDetector, ChangeDetector, ChangeDetectorDefinition } from './interfaces';
+	import { ProtoChangeDetector, ChangeDetector, ChangeDetectorDefinition } from 'angular2/src/core/change_detection/interfaces';
 	export class JitProtoChangeDetector implements ProtoChangeDetector {
 	    private definition;
 	    constructor(definition: ChangeDetectorDefinition);
@@ -3309,7 +3309,7 @@ declare module 'angular2/src/core/change_detection/pipe_transform' {
 
 }
 declare module 'angular2/src/core/change_detection/pipes' {
-	import { PipeTransform } from './pipe_transform';
+	import { PipeTransform } from 'angular2/src/core/change_detection/pipe_transform';
 	export interface Pipes {
 	    get(name: string): SelectedPipe;
 	}
@@ -3321,13 +3321,13 @@ declare module 'angular2/src/core/change_detection/pipes' {
 
 }
 declare module 'angular2/src/core/change_detection/abstract_change_detector' {
-	import { ChangeDetectorRef } from './change_detector_ref';
-	import { DirectiveIndex } from './directive_record';
-	import { ChangeDetector, ChangeDispatcher } from './interfaces';
-	import { Pipes } from './pipes';
-	import { BindingTarget } from './binding_record';
-	import { Locals } from './parser/locals';
-	import { ChangeDetectionStrategy, ChangeDetectorState } from './constants';
+	import { ChangeDetectorRef } from 'angular2/src/core/change_detection/change_detector_ref';
+	import { DirectiveIndex } from 'angular2/src/core/change_detection/directive_record';
+	import { ChangeDetector, ChangeDispatcher } from 'angular2/src/core/change_detection/interfaces';
+	import { Pipes } from 'angular2/src/core/change_detection/pipes';
+	import { BindingTarget } from 'angular2/src/core/change_detection/binding_record';
+	import { Locals } from 'angular2/src/core/change_detection/parser/locals';
+	import { ChangeDetectionStrategy, ChangeDetectorState } from 'angular2/src/core/change_detection/constants';
 	export class AbstractChangeDetector<T> implements ChangeDetector {
 	    id: string;
 	    numberOfPropertyProtoRecords: number;
@@ -3389,14 +3389,14 @@ declare module 'angular2/src/core/change_detection/abstract_change_detector' {
 
 }
 declare module 'angular2/src/core/change_detection/dynamic_change_detector' {
-	import { AbstractChangeDetector } from './abstract_change_detector';
-	import { EventBinding } from './event_binding';
-	import { BindingTarget } from './binding_record';
-	import { DirectiveRecord, DirectiveIndex } from './directive_record';
-	import { Locals } from './parser/locals';
-	import { ChangeDispatcher, ChangeDetectorGenConfig } from './interfaces';
-	import { ChangeDetectionStrategy } from './constants';
-	import { ProtoRecord } from './proto_record';
+	import { AbstractChangeDetector } from 'angular2/src/core/change_detection/abstract_change_detector';
+	import { EventBinding } from 'angular2/src/core/change_detection/event_binding';
+	import { BindingTarget } from 'angular2/src/core/change_detection/binding_record';
+	import { DirectiveRecord, DirectiveIndex } from 'angular2/src/core/change_detection/directive_record';
+	import { Locals } from 'angular2/src/core/change_detection/parser/locals';
+	import { ChangeDispatcher, ChangeDetectorGenConfig } from 'angular2/src/core/change_detection/interfaces';
+	import { ChangeDetectionStrategy } from 'angular2/src/core/change_detection/constants';
+	import { ProtoRecord } from 'angular2/src/core/change_detection/proto_record';
 	export class DynamicChangeDetector extends AbstractChangeDetector<any> {
 	    private _records;
 	    private _eventBindings;
@@ -3433,11 +3433,11 @@ declare module 'angular2/src/core/change_detection/dynamic_change_detector' {
 
 }
 declare module 'angular2/src/core/change_detection/change_detection_util' {
-	import { ProtoRecord } from './proto_record';
-	import { ChangeDetectionStrategy } from './constants';
-	import { BindingTarget } from './binding_record';
-	import { DirectiveIndex } from './directive_record';
-	import { SelectedPipe } from './pipes';
+	import { ProtoRecord } from 'angular2/src/core/change_detection/proto_record';
+	import { ChangeDetectionStrategy } from 'angular2/src/core/change_detection/constants';
+	import { BindingTarget } from 'angular2/src/core/change_detection/binding_record';
+	import { DirectiveIndex } from 'angular2/src/core/change_detection/directive_record';
+	import { SelectedPipe } from 'angular2/src/core/change_detection/pipes';
 	/**
 	 * Indicates that the result of a {@link PipeMetadata} transformation has changed even though the
 	 * reference
@@ -3517,27 +3517,27 @@ declare module 'angular2/src/core/change_detection/change_detection_util' {
 
 }
 declare module 'angular2/src/core/change_detection/change_detection' {
-	import { IterableDiffers, IterableDifferFactory } from './differs/iterable_differs';
-	import { KeyValueDiffers, KeyValueDifferFactory } from './differs/keyvalue_differs';
-	export { DefaultKeyValueDifferFactory, KeyValueChangeRecord } from './differs/default_keyvalue_differ';
-	export { DefaultIterableDifferFactory, CollectionChangeRecord } from './differs/default_iterable_differ';
-	export { ASTWithSource, AST, AstTransformer, PropertyRead, LiteralArray, ImplicitReceiver } from './parser/ast';
-	export { Lexer } from './parser/lexer';
-	export { Parser } from './parser/parser';
-	export { Locals } from './parser/locals';
-	export { DehydratedException, ExpressionChangedAfterItHasBeenCheckedException, ChangeDetectionError } from './exceptions';
-	export { ProtoChangeDetector, ChangeDetector, ChangeDispatcher, ChangeDetectorDefinition, DebugContext, ChangeDetectorGenConfig } from './interfaces';
-	export { ChangeDetectionStrategy, CHANGE_DETECTION_STRATEGY_VALUES } from './constants';
-	export { DynamicProtoChangeDetector } from './proto_change_detector';
-	export { JitProtoChangeDetector } from './jit_proto_change_detector';
-	export { BindingRecord, BindingTarget } from './binding_record';
-	export { DirectiveIndex, DirectiveRecord } from './directive_record';
-	export { DynamicChangeDetector } from './dynamic_change_detector';
-	export { ChangeDetectorRef } from './change_detector_ref';
-	export { IterableDiffers, IterableDiffer, IterableDifferFactory, TrackByFn } from './differs/iterable_differs';
-	export { KeyValueDiffers, KeyValueDiffer, KeyValueDifferFactory } from './differs/keyvalue_differs';
-	export { PipeTransform } from './pipe_transform';
-	export { WrappedValue, SimpleChange } from './change_detection_util';
+	import { IterableDiffers, IterableDifferFactory } from 'angular2/src/core/change_detection/differs/iterable_differs';
+	import { KeyValueDiffers, KeyValueDifferFactory } from 'angular2/src/core/change_detection/differs/keyvalue_differs';
+	export { DefaultKeyValueDifferFactory, KeyValueChangeRecord } from 'angular2/src/core/change_detection/differs/default_keyvalue_differ';
+	export { DefaultIterableDifferFactory, CollectionChangeRecord } from 'angular2/src/core/change_detection/differs/default_iterable_differ';
+	export { ASTWithSource, AST, AstTransformer, PropertyRead, LiteralArray, ImplicitReceiver } from 'angular2/src/core/change_detection/parser/ast';
+	export { Lexer } from 'angular2/src/core/change_detection/parser/lexer';
+	export { Parser } from 'angular2/src/core/change_detection/parser/parser';
+	export { Locals } from 'angular2/src/core/change_detection/parser/locals';
+	export { DehydratedException, ExpressionChangedAfterItHasBeenCheckedException, ChangeDetectionError } from 'angular2/src/core/change_detection/exceptions';
+	export { ProtoChangeDetector, ChangeDetector, ChangeDispatcher, ChangeDetectorDefinition, DebugContext, ChangeDetectorGenConfig } from 'angular2/src/core/change_detection/interfaces';
+	export { ChangeDetectionStrategy, CHANGE_DETECTION_STRATEGY_VALUES } from 'angular2/src/core/change_detection/constants';
+	export { DynamicProtoChangeDetector } from 'angular2/src/core/change_detection/proto_change_detector';
+	export { JitProtoChangeDetector } from 'angular2/src/core/change_detection/jit_proto_change_detector';
+	export { BindingRecord, BindingTarget } from 'angular2/src/core/change_detection/binding_record';
+	export { DirectiveIndex, DirectiveRecord } from 'angular2/src/core/change_detection/directive_record';
+	export { DynamicChangeDetector } from 'angular2/src/core/change_detection/dynamic_change_detector';
+	export { ChangeDetectorRef } from 'angular2/src/core/change_detection/change_detector_ref';
+	export { IterableDiffers, IterableDiffer, IterableDifferFactory, TrackByFn } from 'angular2/src/core/change_detection/differs/iterable_differs';
+	export { KeyValueDiffers, KeyValueDiffer, KeyValueDifferFactory } from 'angular2/src/core/change_detection/differs/keyvalue_differs';
+	export { PipeTransform } from 'angular2/src/core/change_detection/pipe_transform';
+	export { WrappedValue, SimpleChange } from 'angular2/src/core/change_detection/change_detection_util';
 	/**
 	 * Structural diffing for `Object`s and `Map`s.
 	 */
@@ -3556,7 +3556,7 @@ declare module 'angular2/src/core/change_detection' {
 	 * @description
 	 * Change detection enables data binding in Angular.
 	 */
-	export { ChangeDetectionStrategy, ExpressionChangedAfterItHasBeenCheckedException, ChangeDetectionError, ChangeDetectorRef, WrappedValue, SimpleChange, PipeTransform, IterableDiffers, IterableDiffer, IterableDifferFactory, KeyValueDiffers, KeyValueDiffer, KeyValueDifferFactory, CollectionChangeRecord, KeyValueChangeRecord, TrackByFn } from './change_detection/change_detection';
+	export { ChangeDetectionStrategy, ExpressionChangedAfterItHasBeenCheckedException, ChangeDetectionError, ChangeDetectorRef, WrappedValue, SimpleChange, PipeTransform, IterableDiffers, IterableDiffer, IterableDifferFactory, KeyValueDiffers, KeyValueDiffer, KeyValueDifferFactory, CollectionChangeRecord, KeyValueChangeRecord, TrackByFn } from 'angular2/src/core/change_detection/change_detection';
 
 }
 declare module 'angular2/src/core/metadata/view' {
@@ -4907,14 +4907,14 @@ declare module 'angular2/src/core/metadata' {
 	 * This indirection is needed to free up Component, etc symbols in the public API
 	 * to be used by the decorator versions of these annotations.
 	 */
-	export { QueryMetadata, ContentChildrenMetadata, ContentChildMetadata, ViewChildrenMetadata, ViewQueryMetadata, ViewChildMetadata, AttributeMetadata } from './metadata/di';
-	export { ComponentMetadata, DirectiveMetadata, PipeMetadata, InputMetadata, OutputMetadata, HostBindingMetadata, HostListenerMetadata } from './metadata/directives';
-	export { ViewMetadata, ViewEncapsulation } from './metadata/view';
-	import { QueryMetadata, ContentChildrenMetadata, ViewChildrenMetadata, AttributeMetadata } from './metadata/di';
-	import { ComponentMetadata, DirectiveMetadata } from './metadata/directives';
-	import { ViewMetadata, ViewEncapsulation } from './metadata/view';
+	export { QueryMetadata, ContentChildrenMetadata, ContentChildMetadata, ViewChildrenMetadata, ViewQueryMetadata, ViewChildMetadata, AttributeMetadata } from 'angular2/src/core/metadata/di';
+	export { ComponentMetadata, DirectiveMetadata, PipeMetadata, InputMetadata, OutputMetadata, HostBindingMetadata, HostListenerMetadata } from 'angular2/src/core/metadata/directives';
+	export { ViewMetadata, ViewEncapsulation } from 'angular2/src/core/metadata/view';
+	import { QueryMetadata, ContentChildrenMetadata, ViewChildrenMetadata, AttributeMetadata } from 'angular2/src/core/metadata/di';
+	import { ComponentMetadata, DirectiveMetadata } from 'angular2/src/core/metadata/directives';
+	import { ViewMetadata, ViewEncapsulation } from 'angular2/src/core/metadata/view';
 	import { ChangeDetectionStrategy } from 'angular2/src/core/change_detection/change_detection';
-	import { TypeDecorator } from './util/decorators';
+	import { TypeDecorator } from 'angular2/src/core/util/decorators';
 	import { Type } from 'angular2/src/facade/lang';
 	/**
 	 * Interface for the {@link DirectiveMetadata} decorator function.
@@ -6164,7 +6164,7 @@ declare module 'angular2/src/core/metadata' {
 
 }
 declare module 'angular2/src/core/util' {
-	export { Class, ClassDefinition, TypeDecorator } from './util/decorators';
+	export { Class, ClassDefinition, TypeDecorator } from 'angular2/src/core/util/decorators';
 
 }
 declare module 'angular2/src/core/prod_mode' {
@@ -6276,10 +6276,10 @@ declare module 'angular2/src/facade/async' {
 
 }
 declare module 'angular2/src/facade/facade' {
-	export { ConcreteType, Type } from './lang';
-	export { EventEmitter } from './async';
-	export { WrappedException } from './exceptions';
-	export { ExceptionHandler } from './exception_handler';
+	export { ConcreteType, Type } from 'angular2/src/facade/lang';
+	export { EventEmitter } from 'angular2/src/facade/async';
+	export { WrappedException } from 'angular2/src/facade/exceptions';
+	export { ExceptionHandler } from 'angular2/src/facade/exception_handler';
 
 }
 declare module 'angular2/src/core/zone/ng_zone_impl' {
@@ -6313,7 +6313,7 @@ declare module 'angular2/src/core/zone/ng_zone_impl' {
 }
 declare module 'angular2/src/core/zone/ng_zone' {
 	import { EventEmitter } from 'angular2/src/facade/async';
-	export { NgZoneError } from './ng_zone_impl';
+	export { NgZoneError } from 'angular2/src/core/zone/ng_zone_impl';
 	/**
 	 * An injectable service for executing work inside or outside of the Angular zone.
 	 *
@@ -6464,7 +6464,7 @@ declare module 'angular2/src/core/linker/view_type' {
 
 }
 declare module 'angular2/src/core/linker/element_ref' {
-	import { AppElement } from './element';
+	import { AppElement } from 'angular2/src/core/linker/element';
 	/**
 	 * Represents a location in a View that has an injection, change-detection and render context
 	 * associated with it.
@@ -6506,7 +6506,7 @@ declare module 'angular2/src/core/linker/element_ref' {
 
 }
 declare module 'angular2/src/core/linker/template_ref' {
-	import { ElementRef, ElementRef_ } from './element_ref';
+	import { ElementRef, ElementRef_ } from 'angular2/src/core/linker/element_ref';
 	/**
 	 * Represents an Embedded Template that can be used to instantiate Embedded Views.
 	 *
@@ -6542,10 +6542,10 @@ declare module 'angular2/src/core/linker/template_ref' {
 }
 declare module 'angular2/src/core/linker/view_container_ref' {
 	import { ResolvedProvider } from 'angular2/src/core/di';
-	import { AppElement } from './element';
-	import { ElementRef, ElementRef_ } from './element_ref';
-	import { TemplateRef } from './template_ref';
-	import { EmbeddedViewRef, HostViewRef, HostViewFactoryRef, ViewRef } from './view_ref';
+	import { AppElement } from 'angular2/src/core/linker/element';
+	import { ElementRef, ElementRef_ } from 'angular2/src/core/linker/element_ref';
+	import { TemplateRef } from 'angular2/src/core/linker/template_ref';
+	import { EmbeddedViewRef, HostViewRef, HostViewFactoryRef, ViewRef } from 'angular2/src/core/linker/view_ref';
 	/**
 	 * Represents a container where one or more Views can be attached.
 	 *
@@ -7198,7 +7198,7 @@ declare module 'angular2/src/core/pipes/pipe_provider' {
 	import { Type } from 'angular2/src/facade/lang';
 	import { ResolvedFactory, ResolvedProvider_ } from 'angular2/src/core/di/provider';
 	import { Key } from 'angular2/src/core/di';
-	import { PipeMetadata } from '../metadata/directives';
+	import { PipeMetadata } from 'angular2/src/core/metadata/directives';
 	export class PipeProvider extends ResolvedProvider_ {
 	    name: string;
 	    pure: boolean;
@@ -7228,10 +7228,10 @@ declare module 'angular2/src/core/linker/pipe_resolver' {
 }
 declare module 'angular2/src/core/linker/resolved_metadata_cache' {
 	import { Type } from 'angular2/src/facade/lang';
-	import { DirectiveProvider } from './element';
-	import { DirectiveResolver } from './directive_resolver';
-	import { PipeProvider } from '../pipes/pipe_provider';
-	import { PipeResolver } from './pipe_resolver';
+	import { DirectiveProvider } from 'angular2/src/core/linker/element';
+	import { DirectiveResolver } from 'angular2/src/core/linker/directive_resolver';
+	import { PipeProvider } from 'angular2/src/core/pipes/pipe_provider';
+	import { PipeResolver } from 'angular2/src/core/linker/pipe_resolver';
 	export class ResolvedMetadataCache {
 	    private _directiveResolver;
 	    private _pipeResolver;
@@ -7249,18 +7249,18 @@ declare module 'angular2/src/core/linker/element' {
 	import { Injector, Key, Dependency, ResolvedProvider } from 'angular2/src/core/di';
 	import { ProtoInjector, ProviderWithVisibility, DependencyProvider } from 'angular2/src/core/di/injector';
 	import { ResolvedProvider_ } from 'angular2/src/core/di/provider';
-	import { QueryMetadata } from '../metadata/di';
-	import { AppView } from './view';
-	import { ViewType } from './view_type';
-	import { ElementRef_ } from './element_ref';
-	import { ViewContainerRef } from './view_container_ref';
-	import { ElementRef } from './element_ref';
-	import { TemplateRef } from './template_ref';
-	import { DirectiveMetadata } from '../metadata/directives';
-	import { QueryList } from './query_list';
+	import { QueryMetadata } from 'angular2/src/core/metadata/di';
+	import { AppView } from 'angular2/src/core/linker/view';
+	import { ViewType } from 'angular2/src/core/linker/view_type';
+	import { ElementRef_ } from 'angular2/src/core/linker/element_ref';
+	import { ViewContainerRef } from 'angular2/src/core/linker/view_container_ref';
+	import { ElementRef } from 'angular2/src/core/linker/element_ref';
+	import { TemplateRef } from 'angular2/src/core/linker/template_ref';
+	import { DirectiveMetadata } from 'angular2/src/core/metadata/directives';
+	import { QueryList } from 'angular2/src/core/linker/query_list';
 	import { SetterFn } from 'angular2/src/core/reflection/types';
 	import { AfterViewChecked } from 'angular2/src/core/linker/interfaces';
-	import { ResolvedMetadataCache } from './resolved_metadata_cache';
+	import { ResolvedMetadataCache } from 'angular2/src/core/linker/resolved_metadata_cache';
 	export class StaticKeys {
 	    templateRefId: number;
 	    viewContainerId: number;
@@ -7442,7 +7442,7 @@ declare module 'angular2/src/core/render/api' {
 }
 declare module 'angular2/src/core/pipes/pipes' {
 	import { Injector } from 'angular2/src/core/di';
-	import { PipeProvider } from './pipe_provider';
+	import { PipeProvider } from 'angular2/src/core/pipes/pipe_provider';
 	import * as cd from 'angular2/src/core/change_detection/pipes';
 	export class ProtoPipes {
 	    /**
@@ -7471,10 +7471,10 @@ declare module 'angular2/src/core/pipes/pipes' {
 }
 declare module 'angular2/src/core/linker/view_manager' {
 	import { Injector, ResolvedProvider } from 'angular2/src/core/di';
-	import { ElementRef } from './element_ref';
-	import { HostViewFactoryRef, EmbeddedViewRef, HostViewRef, ViewRef } from './view_ref';
-	import { ViewContainerRef } from './view_container_ref';
-	import { TemplateRef } from './template_ref';
+	import { ElementRef } from 'angular2/src/core/linker/element_ref';
+	import { HostViewFactoryRef, EmbeddedViewRef, HostViewRef, ViewRef } from 'angular2/src/core/linker/view_ref';
+	import { ViewContainerRef } from 'angular2/src/core/linker/view_container_ref';
+	import { TemplateRef } from 'angular2/src/core/linker/template_ref';
 	import { RootRenderer } from 'angular2/src/core/render/api';
 	/**
 	 * Service exposing low level API for creating, moving and destroying Views.
@@ -7633,16 +7633,16 @@ declare module 'angular2/src/core/linker/view' {
 	import { ChangeDetector, ChangeDispatcher, DirectiveIndex, BindingTarget, Locals, ChangeDetectorRef } from 'angular2/src/core/change_detection/change_detection';
 	import { ResolvedProvider, Injector } from 'angular2/src/core/di';
 	import { DebugContext } from 'angular2/src/core/change_detection/interfaces';
-	import { AppElement } from './element';
+	import { AppElement } from 'angular2/src/core/linker/element';
 	import { Type } from 'angular2/src/facade/lang';
 	import { Renderer } from 'angular2/src/core/render/api';
-	import { ViewRef_ } from './view_ref';
+	import { ViewRef_ } from 'angular2/src/core/linker/view_ref';
 	import { ProtoPipes } from 'angular2/src/core/pipes/pipes';
 	export { DebugContext } from 'angular2/src/core/change_detection/interfaces';
 	import { Pipes } from 'angular2/src/core/pipes/pipes';
-	import { AppViewManager_ } from './view_manager';
-	import { ResolvedMetadataCache } from './resolved_metadata_cache';
-	import { ViewType } from './view_type';
+	import { AppViewManager_ } from 'angular2/src/core/linker/view_manager';
+	import { ResolvedMetadataCache } from 'angular2/src/core/linker/resolved_metadata_cache';
+	import { ViewType } from 'angular2/src/core/linker/view_type';
 	/**
 	 * Cost of making objects: http://jsperf.com/instantiate-size-of-object
 	 *
@@ -7732,8 +7732,8 @@ declare module 'angular2/src/core/linker/view' {
 
 }
 declare module 'angular2/src/core/linker/view_ref' {
-	import { ChangeDetectorRef } from '../change_detection/change_detector_ref';
-	import { AppView, HostViewFactory } from './view';
+	import { ChangeDetectorRef } from 'angular2/src/core/change_detection/change_detector_ref';
+	import { AppView, HostViewFactory } from 'angular2/src/core/linker/view';
 	export abstract class ViewRef {
 	    destroyed: boolean;
 	}
@@ -7858,11 +7858,11 @@ declare module 'angular2/src/core/linker/compiler' {
 }
 declare module 'angular2/src/core/linker/dynamic_component_loader' {
 	import { Injector, ResolvedProvider } from 'angular2/src/core/di';
-	import { Compiler } from './compiler';
+	import { Compiler } from 'angular2/src/core/linker/compiler';
 	import { Type } from 'angular2/src/facade/lang';
 	import { AppViewManager } from 'angular2/src/core/linker/view_manager';
-	import { ElementRef } from './element_ref';
-	import { HostViewRef } from './view_ref';
+	import { ElementRef } from 'angular2/src/core/linker/element_ref';
+	import { HostViewRef } from 'angular2/src/core/linker/view_ref';
 	/**
 	 * Represents an instance of a Component created via {@link DynamicComponentLoader}.
 	 *
@@ -8293,15 +8293,15 @@ declare module 'angular2/src/core/application_tokens' {
 
 }
 declare module 'angular2/src/core/zone' {
-	export { NgZone, NgZoneError } from './zone/ng_zone';
+	export { NgZone, NgZoneError } from 'angular2/src/core/zone/ng_zone';
 
 }
 declare module 'angular2/src/core/render' {
-	export { RootRenderer, Renderer, RenderComponentType } from './render/api';
+	export { RootRenderer, Renderer, RenderComponentType } from 'angular2/src/core/render/api';
 
 }
 declare module 'angular2/src/core/linker/view_resolver' {
-	import { ViewMetadata } from '../metadata/view';
+	import { ViewMetadata } from 'angular2/src/core/metadata/view';
 	import { Type } from 'angular2/src/facade/lang';
 	/**
 	 * Resolves types to {@link ViewMetadata}.
@@ -8312,18 +8312,18 @@ declare module 'angular2/src/core/linker/view_resolver' {
 
 }
 declare module 'angular2/src/core/linker' {
-	export { AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnChanges, OnDestroy, OnInit, DoCheck } from './linker/interfaces';
-	export { DirectiveResolver } from './linker/directive_resolver';
-	export { ViewResolver } from './linker/view_resolver';
-	export { Compiler } from './linker/compiler';
-	export { AppViewManager } from './linker/view_manager';
-	export { QueryList } from './linker/query_list';
-	export { DynamicComponentLoader } from './linker/dynamic_component_loader';
-	export { ElementRef } from './linker/element_ref';
-	export { TemplateRef } from './linker/template_ref';
-	export { EmbeddedViewRef, HostViewRef, ViewRef, HostViewFactoryRef } from './linker/view_ref';
-	export { ViewContainerRef } from './linker/view_container_ref';
-	export { ComponentRef } from './linker/dynamic_component_loader';
+	export { AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnChanges, OnDestroy, OnInit, DoCheck } from 'angular2/src/core/linker/interfaces';
+	export { DirectiveResolver } from 'angular2/src/core/linker/directive_resolver';
+	export { ViewResolver } from 'angular2/src/core/linker/view_resolver';
+	export { Compiler } from 'angular2/src/core/linker/compiler';
+	export { AppViewManager } from 'angular2/src/core/linker/view_manager';
+	export { QueryList } from 'angular2/src/core/linker/query_list';
+	export { DynamicComponentLoader } from 'angular2/src/core/linker/dynamic_component_loader';
+	export { ElementRef } from 'angular2/src/core/linker/element_ref';
+	export { TemplateRef } from 'angular2/src/core/linker/template_ref';
+	export { EmbeddedViewRef, HostViewRef, ViewRef, HostViewFactoryRef } from 'angular2/src/core/linker/view_ref';
+	export { ViewContainerRef } from 'angular2/src/core/linker/view_container_ref';
+	export { ComponentRef } from 'angular2/src/core/linker/dynamic_component_loader';
 
 }
 declare module 'angular2/src/facade/collection' {
@@ -8478,7 +8478,7 @@ declare module 'angular2/src/core/debug/debug_node' {
 
 }
 declare module 'angular2/src/core/testability/testability' {
-	import { NgZone } from '../zone/ng_zone';
+	import { NgZone } from 'angular2/src/core/zone/ng_zone';
 	/**
 	 * The Testability service provides testing hooks that can be accessed from
 	 * the browser and by services such as Protractor. Each bootstrapped Angular
@@ -8599,24 +8599,24 @@ declare module 'angular2/core' {
 	 * @description
 	 * Starting point to import all public core APIs.
 	 */
-	export * from './src/core/metadata';
-	export * from './src/core/util';
-	export * from './src/core/prod_mode';
-	export * from './src/core/di';
-	export * from './src/facade/facade';
+	export * from 'angular2/src/core/metadata';
+	export * from 'angular2/src/core/util';
+	export * from 'angular2/src/core/prod_mode';
+	export * from 'angular2/src/core/di';
+	export * from 'angular2/src/facade/facade';
 	export { enableProdMode } from 'angular2/src/facade/lang';
-	export { platform, createNgZone, PlatformRef, ApplicationRef } from './src/core/application_ref';
-	export { APP_ID, APP_COMPONENT, APP_INITIALIZER, PACKAGE_ROOT_URL, PLATFORM_INITIALIZER } from './src/core/application_tokens';
-	export * from './src/core/zone';
-	export * from './src/core/render';
-	export * from './src/core/linker';
-	export { DebugElement, DebugNode, asNativeElements } from './src/core/debug/debug_node';
-	export * from './src/core/testability/testability';
-	export * from './src/core/change_detection';
-	export * from './src/core/platform_directives_and_pipes';
-	export * from './src/core/platform_common_providers';
-	export * from './src/core/application_common_providers';
-	export * from './src/core/reflection/reflection';
+	export { platform, createNgZone, PlatformRef, ApplicationRef } from 'angular2/src/core/application_ref';
+	export { APP_ID, APP_COMPONENT, APP_INITIALIZER, PACKAGE_ROOT_URL, PLATFORM_INITIALIZER } from 'angular2/src/core/application_tokens';
+	export * from 'angular2/src/core/zone';
+	export * from 'angular2/src/core/render';
+	export * from 'angular2/src/core/linker';
+	export { DebugElement, DebugNode, asNativeElements } from 'angular2/src/core/debug/debug_node';
+	export * from 'angular2/src/core/testability/testability';
+	export * from 'angular2/src/core/change_detection';
+	export * from 'angular2/src/core/platform_directives_and_pipes';
+	export * from 'angular2/src/core/platform_common_providers';
+	export * from 'angular2/src/core/application_common_providers';
+	export * from 'angular2/src/core/reflection/reflection';
 
 }
 declare module 'angular2/src/http/enums' {
@@ -8767,10 +8767,10 @@ declare module 'angular2/src/http/url_search_params' {
 
 }
 declare module 'angular2/src/http/interfaces' {
-	import { ReadyState, RequestMethod, ResponseType } from './enums';
-	import { Headers } from './headers';
-	import { Request } from './static_request';
-	import { URLSearchParams } from './url_search_params';
+	import { ReadyState, RequestMethod, ResponseType } from 'angular2/src/http/enums';
+	import { Headers } from 'angular2/src/http/headers';
+	import { Request } from 'angular2/src/http/static_request';
+	import { URLSearchParams } from 'angular2/src/http/url_search_params';
 	/**
 	 * Abstract class from which real backends are derived.
 	 *
@@ -8820,9 +8820,9 @@ declare module 'angular2/src/http/interfaces' {
 
 }
 declare module 'angular2/src/http/static_request' {
-	import { RequestMethod } from './enums';
-	import { RequestArgs } from './interfaces';
-	import { Headers } from './headers';
+	import { RequestMethod } from 'angular2/src/http/enums';
+	import { RequestArgs } from 'angular2/src/http/interfaces';
+	import { Headers } from 'angular2/src/http/headers';
 	/**
 	 * Creates `Request` instances from provided values.
 	 *
@@ -8883,8 +8883,8 @@ declare module 'angular2/src/http/static_request' {
 
 }
 declare module 'angular2/src/http/base_response_options' {
-	import { Headers } from './headers';
-	import { ResponseOptionsArgs } from './interfaces';
+	import { Headers } from 'angular2/src/http/headers';
+	import { ResponseOptionsArgs } from 'angular2/src/http/interfaces';
 	/**
 	 * Creates a response options object to be optionally provided when instantiating a
 	 * {@link Response}.
@@ -9004,9 +9004,9 @@ declare module 'angular2/src/http/base_response_options' {
 
 }
 declare module 'angular2/src/http/static_response' {
-	import { ResponseType } from './enums';
-	import { Headers } from './headers';
-	import { ResponseOptions } from './base_response_options';
+	import { ResponseType } from 'angular2/src/http/enums';
+	import { Headers } from 'angular2/src/http/headers';
+	import { ResponseOptions } from 'angular2/src/http/base_response_options';
 	/**
 	 * Creates `Response` instances from provided values.
 	 *
@@ -9107,10 +9107,10 @@ declare module 'angular2/src/http/backends/browser_xhr' {
 
 }
 declare module 'angular2/src/http/base_request_options' {
-	import { Headers } from './headers';
-	import { RequestMethod } from './enums';
-	import { RequestOptionsArgs } from './interfaces';
-	import { URLSearchParams } from './url_search_params';
+	import { Headers } from 'angular2/src/http/headers';
+	import { RequestMethod } from 'angular2/src/http/enums';
+	import { RequestOptionsArgs } from 'angular2/src/http/interfaces';
+	import { URLSearchParams } from 'angular2/src/http/url_search_params';
 	/**
 	 * Creates a request options object to be optionally provided when instantiating a
 	 * {@link Request}.
@@ -9235,12 +9235,12 @@ declare module 'angular2/src/http/base_request_options' {
 
 }
 declare module 'angular2/src/http/backends/xhr_backend' {
-	import { ConnectionBackend, Connection } from '../interfaces';
-	import { ReadyState } from '../enums';
-	import { Request } from '../static_request';
-	import { Response } from '../static_response';
-	import { ResponseOptions } from '../base_response_options';
-	import { BrowserXhr } from './browser_xhr';
+	import { ConnectionBackend, Connection } from 'angular2/src/http/interfaces';
+	import { ReadyState } from 'angular2/src/http/enums';
+	import { Request } from 'angular2/src/http/static_request';
+	import { Response } from 'angular2/src/http/static_response';
+	import { ResponseOptions } from 'angular2/src/http/base_response_options';
+	import { BrowserXhr } from 'angular2/src/http/backends/browser_xhr';
 	import { Observable } from 'rxjs/Observable';
 	/**
 	* Creates connections using `XMLHttpRequest`. Given a fully-qualified
@@ -9308,12 +9308,12 @@ declare module 'angular2/src/http/backends/browser_jsonp' {
 
 }
 declare module 'angular2/src/http/backends/jsonp_backend' {
-	import { ConnectionBackend, Connection } from '../interfaces';
-	import { ReadyState } from '../enums';
-	import { Request } from '../static_request';
-	import { Response } from '../static_response';
-	import { ResponseOptions } from '../base_response_options';
-	import { BrowserJsonp } from './browser_jsonp';
+	import { ConnectionBackend, Connection } from 'angular2/src/http/interfaces';
+	import { ReadyState } from 'angular2/src/http/enums';
+	import { Request } from 'angular2/src/http/static_request';
+	import { Response } from 'angular2/src/http/static_response';
+	import { ResponseOptions } from 'angular2/src/http/base_response_options';
+	import { BrowserJsonp } from 'angular2/src/http/backends/browser_jsonp';
 	import { Observable } from 'rxjs/Observable';
 	/**
 	 * Abstract base class for an in-flight JSONP request.
@@ -9361,10 +9361,10 @@ declare module 'angular2/src/http/backends/jsonp_backend' {
 
 }
 declare module 'angular2/src/http/http' {
-	import { RequestOptionsArgs, ConnectionBackend } from './interfaces';
-	import { Request } from './static_request';
-	import { Response } from './static_response';
-	import { RequestOptions } from './base_request_options';
+	import { RequestOptionsArgs, ConnectionBackend } from 'angular2/src/http/interfaces';
+	import { Request } from 'angular2/src/http/static_request';
+	import { Response } from 'angular2/src/http/static_response';
+	import { RequestOptions } from 'angular2/src/http/base_request_options';
 	import { Observable } from 'rxjs/Observable';
 	/**
 	 * Performs http requests using `XMLHttpRequest` as the default backend.
@@ -9473,18 +9473,18 @@ declare module 'angular2/src/http/http' {
 
 }
 declare module 'angular2/http' {
-	export { Request } from './src/http/static_request';
-	export { Response } from './src/http/static_response';
-	export { RequestOptionsArgs, ResponseOptionsArgs, Connection, ConnectionBackend } from './src/http/interfaces';
-	export { BrowserXhr } from './src/http/backends/browser_xhr';
-	export { BaseRequestOptions, RequestOptions } from './src/http/base_request_options';
-	export { BaseResponseOptions, ResponseOptions } from './src/http/base_response_options';
-	export { XHRBackend, XHRConnection } from './src/http/backends/xhr_backend';
-	export { JSONPBackend, JSONPConnection } from './src/http/backends/jsonp_backend';
-	export { Http, Jsonp } from './src/http/http';
-	export { Headers } from './src/http/headers';
-	export { ResponseType, ReadyState, RequestMethod } from './src/http/enums';
-	export { URLSearchParams } from './src/http/url_search_params';
+	export { Request } from 'angular2/src/http/static_request';
+	export { Response } from 'angular2/src/http/static_response';
+	export { RequestOptionsArgs, ResponseOptionsArgs, Connection, ConnectionBackend } from 'angular2/src/http/interfaces';
+	export { BrowserXhr } from 'angular2/src/http/backends/browser_xhr';
+	export { BaseRequestOptions, RequestOptions } from 'angular2/src/http/base_request_options';
+	export { BaseResponseOptions, ResponseOptions } from 'angular2/src/http/base_response_options';
+	export { XHRBackend, XHRConnection } from 'angular2/src/http/backends/xhr_backend';
+	export { JSONPBackend, JSONPConnection } from 'angular2/src/http/backends/jsonp_backend';
+	export { Http, Jsonp } from 'angular2/src/http/http';
+	export { Headers } from 'angular2/src/http/headers';
+	export { ResponseType, ReadyState, RequestMethod } from 'angular2/src/http/enums';
+	export { URLSearchParams } from 'angular2/src/http/url_search_params';
 	/**
 	 * Provides a basic set of injectables to use the {@link Http} service in any application.
 	 *
@@ -10123,10 +10123,10 @@ declare module 'angular2/src/common/pipes/common_pipes' {
 	 * @description
 	 * This module provides a set of common Pipes.
 	 */
-	import { AsyncPipe } from './async_pipe';
-	import { UpperCasePipe } from './uppercase_pipe';
-	import { SlicePipe } from './slice_pipe';
-	import { ReplacePipe } from './replace_pipe';
+	import { AsyncPipe } from 'angular2/src/common/pipes/async_pipe';
+	import { UpperCasePipe } from 'angular2/src/common/pipes/uppercase_pipe';
+	import { SlicePipe } from 'angular2/src/common/pipes/slice_pipe';
+	import { ReplacePipe } from 'angular2/src/common/pipes/replace_pipe';
 	/**
 	 * A collection of Angular core pipes that are likely to be used in each and every
 	 * application.
@@ -10143,17 +10143,17 @@ declare module 'angular2/src/common/pipes' {
 	 * @description
 	 * This module provides a set of common Pipes.
 	 */
-	export { AsyncPipe } from './pipes/async_pipe';
-	export { DatePipe } from './pipes/date_pipe';
-	export { JsonPipe } from './pipes/json_pipe';
-	export { SlicePipe } from './pipes/slice_pipe';
-	export { LowerCasePipe } from './pipes/lowercase_pipe';
-	export { NumberPipe, DecimalPipe, PercentPipe, CurrencyPipe } from './pipes/number_pipe';
-	export { UpperCasePipe } from './pipes/uppercase_pipe';
-	export { ReplacePipe } from './pipes/replace_pipe';
-	export { I18nPluralPipe } from './pipes/i18n_plural_pipe';
-	export { I18nSelectPipe } from './pipes/i18n_select_pipe';
-	export { COMMON_PIPES } from './pipes/common_pipes';
+	export { AsyncPipe } from 'angular2/src/common/pipes/async_pipe';
+	export { DatePipe } from 'angular2/src/common/pipes/date_pipe';
+	export { JsonPipe } from 'angular2/src/common/pipes/json_pipe';
+	export { SlicePipe } from 'angular2/src/common/pipes/slice_pipe';
+	export { LowerCasePipe } from 'angular2/src/common/pipes/lowercase_pipe';
+	export { NumberPipe, DecimalPipe, PercentPipe, CurrencyPipe } from 'angular2/src/common/pipes/number_pipe';
+	export { UpperCasePipe } from 'angular2/src/common/pipes/uppercase_pipe';
+	export { ReplacePipe } from 'angular2/src/common/pipes/replace_pipe';
+	export { I18nPluralPipe } from 'angular2/src/common/pipes/i18n_plural_pipe';
+	export { I18nSelectPipe } from 'angular2/src/common/pipes/i18n_select_pipe';
+	export { COMMON_PIPES } from 'angular2/src/common/pipes/common_pipes';
 
 }
 declare module 'angular2/src/common/directives/ng_class' {
@@ -10510,7 +10510,7 @@ declare module 'angular2/src/common/directives/ng_switch' {
 }
 declare module 'angular2/src/common/directives/ng_plural' {
 	import { ViewContainerRef, TemplateRef, QueryList, AfterContentInit } from 'angular2/core';
-	import { SwitchView } from './ng_switch';
+	import { SwitchView } from 'angular2/src/common/directives/ng_switch';
 	export abstract class NgLocalization {
 	    abstract getPluralCategory(value: any): string;
 	}
@@ -10645,19 +10645,19 @@ declare module 'angular2/src/common/directives' {
 	 * @description
 	 * Common directives shipped with Angular.
 	 */
-	export { NgClass } from './directives/ng_class';
-	export { NgFor } from './directives/ng_for';
-	export { NgIf } from './directives/ng_if';
-	export { NgStyle } from './directives/ng_style';
-	export { NgSwitch, NgSwitchWhen, NgSwitchDefault } from './directives/ng_switch';
-	export { NgPlural, NgPluralCase, NgLocalization } from './directives/ng_plural';
-	export * from './directives/observable_list_diff';
-	export { CORE_DIRECTIVES } from './directives/core_directives';
+	export { NgClass } from 'angular2/src/common/directives/ng_class';
+	export { NgFor } from 'angular2/src/common/directives/ng_for';
+	export { NgIf } from 'angular2/src/common/directives/ng_if';
+	export { NgStyle } from 'angular2/src/common/directives/ng_style';
+	export { NgSwitch, NgSwitchWhen, NgSwitchDefault } from 'angular2/src/common/directives/ng_switch';
+	export { NgPlural, NgPluralCase, NgLocalization } from 'angular2/src/common/directives/ng_plural';
+	export * from 'angular2/src/common/directives/observable_list_diff';
+	export { CORE_DIRECTIVES } from 'angular2/src/common/directives/core_directives';
 
 }
 declare module 'angular2/src/common/forms/directives/validators' {
-	import { AbstractControl } from '../model';
-	import * as modelModule from '../model';
+	import { AbstractControl } from 'angular2/src/common/forms/model';
+	import * as modelModule from 'angular2/src/common/forms/model';
 	/**
 	 * An interface that can be implemented by classes that can act as validators.
 	 *
@@ -10733,7 +10733,7 @@ declare module 'angular2/src/common/forms/directives/validators' {
 }
 declare module 'angular2/src/common/forms/model' {
 	import { Observable } from 'angular2/src/facade/async';
-	import { ValidatorFn, AsyncValidatorFn } from './directives/validators';
+	import { ValidatorFn, AsyncValidatorFn } from 'angular2/src/common/forms/directives/validators';
 	/**
 	 * Indicates that a Control is valid, i.e. that no errors exist in the input value.
 	 */
@@ -10960,7 +10960,7 @@ declare module 'angular2/src/common/forms/model' {
 
 }
 declare module 'angular2/src/common/forms/directives/abstract_control_directive' {
-	import { AbstractControl } from '../model';
+	import { AbstractControl } from 'angular2/src/common/forms/model';
 	/**
 	 * Base class for control directives.
 	 *
@@ -11014,9 +11014,9 @@ declare module 'angular2/src/common/forms/directives/control_value_accessor' {
 
 }
 declare module 'angular2/src/common/forms/directives/ng_control' {
-	import { ControlValueAccessor } from './control_value_accessor';
-	import { AbstractControlDirective } from './abstract_control_directive';
-	import { AsyncValidatorFn, ValidatorFn } from './validators';
+	import { ControlValueAccessor } from 'angular2/src/common/forms/directives/control_value_accessor';
+	import { AbstractControlDirective } from 'angular2/src/common/forms/directives/abstract_control_directive';
+	import { AsyncValidatorFn, ValidatorFn } from 'angular2/src/common/forms/directives/validators';
 	/**
 	 * A base class that all control directive extend.
 	 * It binds a {@link Control} object to a DOM element.
@@ -11033,8 +11033,8 @@ declare module 'angular2/src/common/forms/directives/ng_control' {
 
 }
 declare module 'angular2/src/common/forms/directives/control_container' {
-	import { Form } from './form_interface';
-	import { AbstractControlDirective } from './abstract_control_directive';
+	import { Form } from 'angular2/src/common/forms/directives/form_interface';
+	import { AbstractControlDirective } from 'angular2/src/common/forms/directives/abstract_control_directive';
 	/**
 	 * A directive that contains multiple {@link NgControl}s.
 	 *
@@ -11055,10 +11055,10 @@ declare module 'angular2/src/common/forms/directives/control_container' {
 }
 declare module 'angular2/src/common/forms/directives/ng_control_group' {
 	import { OnInit, OnDestroy } from 'angular2/core';
-	import { ControlContainer } from './control_container';
-	import { ControlGroup } from '../model';
-	import { Form } from './form_interface';
-	import { AsyncValidatorFn, ValidatorFn } from './validators';
+	import { ControlContainer } from 'angular2/src/common/forms/directives/control_container';
+	import { ControlGroup } from 'angular2/src/common/forms/model';
+	import { Form } from 'angular2/src/common/forms/directives/form_interface';
+	import { AsyncValidatorFn, ValidatorFn } from 'angular2/src/common/forms/directives/validators';
 	/**
 	 * Creates and binds a control group to a DOM element.
 	 *
@@ -11129,9 +11129,9 @@ declare module 'angular2/src/common/forms/directives/ng_control_group' {
 
 }
 declare module 'angular2/src/common/forms/directives/form_interface' {
-	import { NgControl } from './ng_control';
-	import { NgControlGroup } from './ng_control_group';
-	import { Control, ControlGroup } from '../model';
+	import { NgControl } from 'angular2/src/common/forms/directives/ng_control';
+	import { NgControlGroup } from 'angular2/src/common/forms/directives/ng_control_group';
+	import { Control, ControlGroup } from 'angular2/src/common/forms/model';
 	/**
 	 * An interface that {@link NgFormModel} and {@link NgForm} implement.
 	 *
@@ -11171,11 +11171,11 @@ declare module 'angular2/src/common/forms/directives/form_interface' {
 }
 declare module 'angular2/src/common/forms/directives/ng_control_name' {
 	import { OnChanges, OnDestroy, SimpleChange } from 'angular2/core';
-	import { ControlContainer } from './control_container';
-	import { NgControl } from './ng_control';
-	import { ControlValueAccessor } from './control_value_accessor';
-	import { Control } from '../model';
-	import { ValidatorFn, AsyncValidatorFn } from './validators';
+	import { ControlContainer } from 'angular2/src/common/forms/directives/control_container';
+	import { NgControl } from 'angular2/src/common/forms/directives/ng_control';
+	import { ControlValueAccessor } from 'angular2/src/common/forms/directives/control_value_accessor';
+	import { Control } from 'angular2/src/common/forms/model';
+	import { ValidatorFn, AsyncValidatorFn } from 'angular2/src/common/forms/directives/validators';
 	/**
 	 * Creates and binds a control with a specified name to a DOM element.
 	 *
@@ -11255,10 +11255,10 @@ declare module 'angular2/src/common/forms/directives/ng_control_name' {
 declare module 'angular2/src/common/forms/directives/ng_form_control' {
 	import { EventEmitter } from 'angular2/src/facade/async';
 	import { OnChanges, SimpleChange } from 'angular2/core';
-	import { NgControl } from './ng_control';
-	import { Control } from '../model';
-	import { ControlValueAccessor } from './control_value_accessor';
-	import { ValidatorFn, AsyncValidatorFn } from './validators';
+	import { NgControl } from 'angular2/src/common/forms/directives/ng_control';
+	import { Control } from 'angular2/src/common/forms/model';
+	import { ControlValueAccessor } from 'angular2/src/common/forms/directives/control_value_accessor';
+	import { ValidatorFn, AsyncValidatorFn } from 'angular2/src/common/forms/directives/validators';
 	/**
 	 * Binds an existing {@link Control} to a DOM element.
 	 *
@@ -11329,10 +11329,10 @@ declare module 'angular2/src/common/forms/directives/ng_form_control' {
 declare module 'angular2/src/common/forms/directives/ng_model' {
 	import { EventEmitter } from 'angular2/src/facade/async';
 	import { OnChanges, SimpleChange } from 'angular2/core';
-	import { ControlValueAccessor } from './control_value_accessor';
-	import { NgControl } from './ng_control';
-	import { Control } from '../model';
-	import { ValidatorFn, AsyncValidatorFn } from './validators';
+	import { ControlValueAccessor } from 'angular2/src/common/forms/directives/control_value_accessor';
+	import { NgControl } from 'angular2/src/common/forms/directives/ng_control';
+	import { Control } from 'angular2/src/common/forms/model';
+	import { ValidatorFn, AsyncValidatorFn } from 'angular2/src/common/forms/directives/validators';
 	/**
 	 * Binds a domain model to a form control.
 	 *
@@ -11375,11 +11375,11 @@ declare module 'angular2/src/common/forms/directives/ng_model' {
 declare module 'angular2/src/common/forms/directives/ng_form_model' {
 	import { EventEmitter } from 'angular2/src/facade/async';
 	import { SimpleChange, OnChanges } from 'angular2/core';
-	import { NgControl } from './ng_control';
-	import { NgControlGroup } from './ng_control_group';
-	import { ControlContainer } from './control_container';
-	import { Form } from './form_interface';
-	import { Control, ControlGroup } from '../model';
+	import { NgControl } from 'angular2/src/common/forms/directives/ng_control';
+	import { NgControlGroup } from 'angular2/src/common/forms/directives/ng_control_group';
+	import { ControlContainer } from 'angular2/src/common/forms/directives/control_container';
+	import { Form } from 'angular2/src/common/forms/directives/form_interface';
+	import { Control, ControlGroup } from 'angular2/src/common/forms/model';
 	/**
 	 * Binds an existing control group to a DOM element.
 	 *
@@ -11478,11 +11478,11 @@ declare module 'angular2/src/common/forms/directives/ng_form_model' {
 }
 declare module 'angular2/src/common/forms/directives/ng_form' {
 	import { EventEmitter } from 'angular2/src/facade/async';
-	import { NgControl } from './ng_control';
-	import { Form } from './form_interface';
-	import { NgControlGroup } from './ng_control_group';
-	import { ControlContainer } from './control_container';
-	import { AbstractControl, ControlGroup, Control } from '../model';
+	import { NgControl } from 'angular2/src/common/forms/directives/ng_control';
+	import { Form } from 'angular2/src/common/forms/directives/form_interface';
+	import { NgControlGroup } from 'angular2/src/common/forms/directives/ng_control_group';
+	import { ControlContainer } from 'angular2/src/common/forms/directives/control_container';
+	import { AbstractControl, ControlGroup, Control } from 'angular2/src/common/forms/model';
 	/**
 	 * If `NgForm` is bound in a component, `<form>` elements in that component will be
 	 * upgraded to use the Angular form system.
@@ -11565,7 +11565,7 @@ declare module 'angular2/src/common/forms/directives/ng_form' {
 }
 declare module 'angular2/src/common/forms/directives/default_value_accessor' {
 	import { ElementRef, Renderer } from 'angular2/core';
-	import { ControlValueAccessor } from './control_value_accessor';
+	import { ControlValueAccessor } from 'angular2/src/common/forms/directives/control_value_accessor';
 	/**
 	 * The default accessor for writing a value and listening to changes that is used by the
 	 * {@link NgModel}, {@link NgFormControl}, and {@link NgControlName} directives.
@@ -11588,7 +11588,7 @@ declare module 'angular2/src/common/forms/directives/default_value_accessor' {
 
 }
 declare module 'angular2/src/common/forms/directives/ng_control_status' {
-	import { NgControl } from './ng_control';
+	import { NgControl } from 'angular2/src/common/forms/directives/ng_control';
 	/**
 	 * Directive automatically applied to Angular forms that sets CSS classes
 	 * based on control status (valid/invalid/dirty/etc).
@@ -11607,7 +11607,7 @@ declare module 'angular2/src/common/forms/directives/ng_control_status' {
 }
 declare module 'angular2/src/common/forms/directives/checkbox_value_accessor' {
 	import { Renderer, ElementRef } from 'angular2/core';
-	import { ControlValueAccessor } from './control_value_accessor';
+	import { ControlValueAccessor } from 'angular2/src/common/forms/directives/control_value_accessor';
 	/**
 	 * The accessor for writing a value and listening to changes on a checkbox input element.
 	 *
@@ -11630,7 +11630,7 @@ declare module 'angular2/src/common/forms/directives/checkbox_value_accessor' {
 }
 declare module 'angular2/src/common/forms/directives/select_control_value_accessor' {
 	import { Renderer, ElementRef, QueryList } from 'angular2/core';
-	import { ControlValueAccessor } from './control_value_accessor';
+	import { ControlValueAccessor } from 'angular2/src/common/forms/directives/control_value_accessor';
 	/**
 	 * Marks `<option>` as dynamic, so Angular can be notified when options change.
 	 *
@@ -11723,7 +11723,7 @@ declare module 'angular2/src/common/forms/directives/radio_control_value_accesso
 }
 declare module 'angular2/src/common/forms/directives/number_value_accessor' {
 	import { ElementRef, Renderer } from 'angular2/core';
-	import { ControlValueAccessor } from './control_value_accessor';
+	import { ControlValueAccessor } from 'angular2/src/common/forms/directives/control_value_accessor';
 	/**
 	 * The accessor for writing a number value and listening to changes that is used by the
 	 * {@link NgModel}, {@link NgFormControl}, and {@link NgControlName} directives.
@@ -11747,21 +11747,21 @@ declare module 'angular2/src/common/forms/directives/number_value_accessor' {
 }
 declare module 'angular2/src/common/forms/directives' {
 	import { Type } from 'angular2/src/facade/lang';
-	export { NgControlName } from './directives/ng_control_name';
-	export { NgFormControl } from './directives/ng_form_control';
-	export { NgModel } from './directives/ng_model';
-	export { NgControlGroup } from './directives/ng_control_group';
-	export { NgFormModel } from './directives/ng_form_model';
-	export { NgForm } from './directives/ng_form';
-	export { DefaultValueAccessor } from './directives/default_value_accessor';
-	export { CheckboxControlValueAccessor } from './directives/checkbox_value_accessor';
-	export { RadioControlValueAccessor, RadioButtonState } from './directives/radio_control_value_accessor';
-	export { NumberValueAccessor } from './directives/number_value_accessor';
-	export { NgControlStatus } from './directives/ng_control_status';
-	export { SelectControlValueAccessor, NgSelectOption } from './directives/select_control_value_accessor';
-	export { RequiredValidator, MinLengthValidator, MaxLengthValidator, PatternValidator } from './directives/validators';
-	export { NgControl } from './directives/ng_control';
-	export { ControlValueAccessor } from './directives/control_value_accessor';
+	export { NgControlName } from 'angular2/src/common/forms/directives/ng_control_name';
+	export { NgFormControl } from 'angular2/src/common/forms/directives/ng_form_control';
+	export { NgModel } from 'angular2/src/common/forms/directives/ng_model';
+	export { NgControlGroup } from 'angular2/src/common/forms/directives/ng_control_group';
+	export { NgFormModel } from 'angular2/src/common/forms/directives/ng_form_model';
+	export { NgForm } from 'angular2/src/common/forms/directives/ng_form';
+	export { DefaultValueAccessor } from 'angular2/src/common/forms/directives/default_value_accessor';
+	export { CheckboxControlValueAccessor } from 'angular2/src/common/forms/directives/checkbox_value_accessor';
+	export { RadioControlValueAccessor, RadioButtonState } from 'angular2/src/common/forms/directives/radio_control_value_accessor';
+	export { NumberValueAccessor } from 'angular2/src/common/forms/directives/number_value_accessor';
+	export { NgControlStatus } from 'angular2/src/common/forms/directives/ng_control_status';
+	export { SelectControlValueAccessor, NgSelectOption } from 'angular2/src/common/forms/directives/select_control_value_accessor';
+	export { RequiredValidator, MinLengthValidator, MaxLengthValidator, PatternValidator } from 'angular2/src/common/forms/directives/validators';
+	export { NgControl } from 'angular2/src/common/forms/directives/ng_control';
+	export { ControlValueAccessor } from 'angular2/src/common/forms/directives/control_value_accessor';
 	/**
 	 *
 	 * A list of all the form directives used as part of a `@Component` annotation.
@@ -11783,8 +11783,8 @@ declare module 'angular2/src/common/forms/directives' {
 }
 declare module 'angular2/src/common/forms/validators' {
 	import { OpaqueToken } from 'angular2/core';
-	import * as modelModule from './model';
-	import { ValidatorFn, AsyncValidatorFn } from './directives/validators';
+	import * as modelModule from 'angular2/src/common/forms/model';
+	import { ValidatorFn, AsyncValidatorFn } from 'angular2/src/common/forms/directives/validators';
 	/**
 	 * Providers for validators to be used for {@link Control}s in a form.
 	 *
@@ -11851,8 +11851,8 @@ declare module 'angular2/src/common/forms/validators' {
 
 }
 declare module 'angular2/src/common/forms/form_builder' {
-	import * as modelModule from './model';
-	import { ValidatorFn, AsyncValidatorFn } from './directives/validators';
+	import * as modelModule from 'angular2/src/common/forms/model';
+	import { ValidatorFn, AsyncValidatorFn } from 'angular2/src/common/forms/directives/validators';
 	/**
 	 * Creates a form object from a user-specified configuration.
 	 *
@@ -11932,26 +11932,26 @@ declare module 'angular2/src/common/forms' {
 	 * explicitly.
 	 *
 	 */
-	export { AbstractControl, Control, ControlGroup, ControlArray } from './forms/model';
-	export { AbstractControlDirective } from './forms/directives/abstract_control_directive';
-	export { Form } from './forms/directives/form_interface';
-	export { ControlContainer } from './forms/directives/control_container';
-	export { NgControlName } from './forms/directives/ng_control_name';
-	export { NgFormControl } from './forms/directives/ng_form_control';
-	export { NgModel } from './forms/directives/ng_model';
-	export { NgControl } from './forms/directives/ng_control';
-	export { NgControlGroup } from './forms/directives/ng_control_group';
-	export { NgFormModel } from './forms/directives/ng_form_model';
-	export { NgForm } from './forms/directives/ng_form';
-	export { ControlValueAccessor, NG_VALUE_ACCESSOR } from './forms/directives/control_value_accessor';
-	export { DefaultValueAccessor } from './forms/directives/default_value_accessor';
-	export { NgControlStatus } from './forms/directives/ng_control_status';
-	export { CheckboxControlValueAccessor } from './forms/directives/checkbox_value_accessor';
-	export { NgSelectOption, SelectControlValueAccessor } from './forms/directives/select_control_value_accessor';
-	export { FORM_DIRECTIVES, RadioButtonState } from './forms/directives';
-	export { NG_VALIDATORS, NG_ASYNC_VALIDATORS, Validators } from './forms/validators';
-	export { RequiredValidator, MinLengthValidator, MaxLengthValidator, PatternValidator, Validator } from './forms/directives/validators';
-	export { FormBuilder } from './forms/form_builder';
+	export { AbstractControl, Control, ControlGroup, ControlArray } from 'angular2/src/common/forms/model';
+	export { AbstractControlDirective } from 'angular2/src/common/forms/directives/abstract_control_directive';
+	export { Form } from 'angular2/src/common/forms/directives/form_interface';
+	export { ControlContainer } from 'angular2/src/common/forms/directives/control_container';
+	export { NgControlName } from 'angular2/src/common/forms/directives/ng_control_name';
+	export { NgFormControl } from 'angular2/src/common/forms/directives/ng_form_control';
+	export { NgModel } from 'angular2/src/common/forms/directives/ng_model';
+	export { NgControl } from 'angular2/src/common/forms/directives/ng_control';
+	export { NgControlGroup } from 'angular2/src/common/forms/directives/ng_control_group';
+	export { NgFormModel } from 'angular2/src/common/forms/directives/ng_form_model';
+	export { NgForm } from 'angular2/src/common/forms/directives/ng_form';
+	export { ControlValueAccessor, NG_VALUE_ACCESSOR } from 'angular2/src/common/forms/directives/control_value_accessor';
+	export { DefaultValueAccessor } from 'angular2/src/common/forms/directives/default_value_accessor';
+	export { NgControlStatus } from 'angular2/src/common/forms/directives/ng_control_status';
+	export { CheckboxControlValueAccessor } from 'angular2/src/common/forms/directives/checkbox_value_accessor';
+	export { NgSelectOption, SelectControlValueAccessor } from 'angular2/src/common/forms/directives/select_control_value_accessor';
+	export { FORM_DIRECTIVES, RadioButtonState } from 'angular2/src/common/forms/directives';
+	export { NG_VALIDATORS, NG_ASYNC_VALIDATORS, Validators } from 'angular2/src/common/forms/validators';
+	export { RequiredValidator, MinLengthValidator, MaxLengthValidator, PatternValidator, Validator } from 'angular2/src/common/forms/directives/validators';
+	export { FormBuilder } from 'angular2/src/common/forms/form_builder';
 	import { Type } from 'angular2/src/facade/lang';
 	/**
 	 * Shorthand set of providers used for building Angular forms.
@@ -12020,10 +12020,10 @@ declare module 'angular2/src/common/common_directives' {
 
 }
 declare module 'angular2/common' {
-	export * from './src/common/pipes';
-	export * from './src/common/directives';
-	export * from './src/common/forms';
-	export * from './src/common/common_directives';
+	export * from 'angular2/src/common/pipes';
+	export * from 'angular2/src/common/directives';
+	export * from 'angular2/src/common/forms';
+	export * from 'angular2/src/common/common_directives';
 
 }
 declare module 'angular2/src/router/url_parser' {
@@ -12081,7 +12081,7 @@ declare module 'angular2/src/router/url_parser' {
 
 }
 declare module 'angular2/src/router/rules/route_paths/route_path' {
-	import { Url } from '../../url_parser';
+	import { Url } from 'angular2/src/router/url_parser';
 	export class MatchedUrl {
 	    urlPath: string;
 	    urlParams: string[];
@@ -12116,8 +12116,8 @@ declare module 'angular2/src/router/rules/route_paths/route_path' {
 
 }
 declare module 'angular2/src/router/rules/route_paths/regex_route_path' {
-	import { Url } from '../../url_parser';
-	import { RoutePath, GeneratedUrl, MatchedUrl } from './route_path';
+	import { Url } from 'angular2/src/router/url_parser';
+	import { RoutePath, GeneratedUrl, MatchedUrl } from 'angular2/src/router/rules/route_paths/route_path';
 	export interface RegexSerializer {
 	    (params: {
 	        [key: string]: any;
@@ -12141,7 +12141,7 @@ declare module 'angular2/src/router/rules/route_paths/regex_route_path' {
 }
 declare module 'angular2/src/router/route_definition' {
 	import { Type } from 'angular2/src/facade/lang';
-	import { RegexSerializer } from './rules/route_paths/regex_route_path';
+	import { RegexSerializer } from 'angular2/src/router/rules/route_paths/regex_route_path';
 	/**
 	 * `RouteDefinition` defines a route within a {@link RouteConfig} decorator.
 	 *
@@ -12181,9 +12181,9 @@ declare module 'angular2/src/router/route_definition' {
 }
 declare module 'angular2/src/router/route_config/route_config_impl' {
 	import { Type } from 'angular2/src/facade/lang';
-	import { RouteDefinition } from '../route_definition';
-	import { RegexSerializer } from '../rules/route_paths/regex_route_path';
-	export { RouteDefinition } from '../route_definition';
+	import { RouteDefinition } from 'angular2/src/router/route_definition';
+	import { RegexSerializer } from 'angular2/src/router/rules/route_paths/regex_route_path';
+	export { RouteDefinition } from 'angular2/src/router/route_definition';
 	/**
 	 * The `RouteConfig` decorator defines routes for a given component.
 	 *
@@ -12516,8 +12516,8 @@ declare module 'angular2/src/router/instruction' {
 declare module 'angular2/src/router/route_registry' {
 	import { Type } from 'angular2/src/facade/lang';
 	import { OpaqueToken } from 'angular2/core';
-	import { RouteDefinition } from './route_config/route_config_impl';
-	import { Instruction } from './instruction';
+	import { RouteDefinition } from 'angular2/src/router/route_config/route_config_impl';
+	import { Instruction } from 'angular2/src/router/instruction';
 	/**
 	 * Token used to bind the component with the top-level {@link RouteConfig}s for the
 	 * application.
@@ -12587,8 +12587,8 @@ declare module 'angular2/src/router/route_registry' {
 }
 declare module 'angular2/src/router/directives/router_outlet' {
 	import { DynamicComponentLoader, ElementRef, OnDestroy } from 'angular2/core';
-	import * as routerMod from '../router';
-	import { ComponentInstruction } from '../instruction';
+	import * as routerMod from 'angular2/src/router/router';
+	import { ComponentInstruction } from 'angular2/src/router/instruction';
 	/**
 	 * A router outlet is a placeholder that Angular dynamically fills based on the application's route.
 	 *
@@ -12696,7 +12696,7 @@ declare module 'angular2/src/router/location/platform_location' {
 }
 declare module 'angular2/src/router/location/location_strategy' {
 	import { OpaqueToken } from 'angular2/core';
-	import { UrlChangeListener } from './platform_location';
+	import { UrlChangeListener } from 'angular2/src/router/location/platform_location';
 	/**
 	 * `LocationStrategy` is responsible for representing and reading route state
 	 * from the browser's URL. Angular provides two strategies:
@@ -12757,7 +12757,7 @@ declare module 'angular2/src/router/location/location_strategy' {
 
 }
 declare module 'angular2/src/router/location/location' {
-	import { LocationStrategy } from './location_strategy';
+	import { LocationStrategy } from 'angular2/src/router/location/location_strategy';
 	/**
 	 * `Location` is a service that applications can use to interact with a browser's URL.
 	 * Depending on which {@link LocationStrategy} is used, `Location` will either persist
@@ -12844,11 +12844,11 @@ declare module 'angular2/src/router/location/location' {
 }
 declare module 'angular2/src/router/router' {
 	import { Type } from 'angular2/src/facade/lang';
-	import { RouteRegistry } from './route_registry';
-	import { Instruction } from './instruction';
-	import { RouterOutlet } from './directives/router_outlet';
-	import { Location } from './location/location';
-	import { RouteDefinition } from './route_config/route_config_impl';
+	import { RouteRegistry } from 'angular2/src/router/route_registry';
+	import { Instruction } from 'angular2/src/router/instruction';
+	import { RouterOutlet } from 'angular2/src/router/directives/router_outlet';
+	import { Location } from 'angular2/src/router/location/location';
+	import { RouteDefinition } from 'angular2/src/router/route_config/route_config_impl';
 	/**
 	 * The `Router` is responsible for mapping URLs to components.
 	 *
@@ -12995,8 +12995,8 @@ declare module 'angular2/src/router/router' {
 
 }
 declare module 'angular2/src/router/directives/router_link' {
-	import { Router } from '../router';
-	import { Location } from '../location/location';
+	import { Router } from 'angular2/src/router/router';
+	import { Location } from 'angular2/src/router/location/location';
 	/**
 	 * The RouterLink directive lets you link to specific parts of your app.
 	 *
@@ -13042,9 +13042,9 @@ declare module 'angular2/src/router/directives/router_link' {
 
 }
 declare module 'angular2/src/router/location/hash_location_strategy' {
-	import { LocationStrategy } from './location_strategy';
-	import { UrlChangeListener } from './platform_location';
-	import { PlatformLocation } from './platform_location';
+	import { LocationStrategy } from 'angular2/src/router/location/location_strategy';
+	import { UrlChangeListener } from 'angular2/src/router/location/platform_location';
+	import { PlatformLocation } from 'angular2/src/router/location/platform_location';
 	/**
 	 * `HashLocationStrategy` is a {@link LocationStrategy} used to configure the
 	 * {@link Location} service to represent its state in the
@@ -13099,8 +13099,8 @@ declare module 'angular2/src/router/location/hash_location_strategy' {
 
 }
 declare module 'angular2/src/router/location/path_location_strategy' {
-	import { LocationStrategy } from './location_strategy';
-	import { PlatformLocation, UrlChangeListener } from './platform_location';
+	import { LocationStrategy } from 'angular2/src/router/location/location_strategy';
+	import { PlatformLocation, UrlChangeListener } from 'angular2/src/router/location/platform_location';
 	/**
 	 * `PathLocationStrategy` is a {@link LocationStrategy} used to configure the
 	 * {@link Location} service to represent its state in the
@@ -13162,8 +13162,8 @@ declare module 'angular2/src/router/location/path_location_strategy' {
 
 }
 declare module 'angular2/src/router/route_config/route_config_decorator' {
-	import { RouteDefinition } from './route_config_impl';
-	export { Route, Redirect, AuxRoute, AsyncRoute, RouteDefinition } from './route_config_impl';
+	import { RouteDefinition } from 'angular2/src/router/route_config/route_config_impl';
+	export { Route, Redirect, AuxRoute, AsyncRoute, RouteDefinition } from 'angular2/src/router/route_config/route_config_impl';
 	/**
 	 * The `RouteConfig` decorator defines routes for a given component.
 	 *
@@ -13173,7 +13173,7 @@ declare module 'angular2/src/router/route_config/route_config_decorator' {
 
 }
 declare module 'angular2/src/router/interfaces' {
-	import { ComponentInstruction } from './instruction';
+	import { ComponentInstruction } from 'angular2/src/router/instruction';
 	/**
 	 * Defines route lifecycle method `routerOnActivate`, which is called by the router at the end of a
 	 * successful route navigation.
@@ -13295,8 +13295,8 @@ declare module 'angular2/src/router/lifecycle/lifecycle_annotations_impl' {
 
 }
 declare module 'angular2/src/router/lifecycle/lifecycle_annotations' {
-	import { ComponentInstruction } from '../instruction';
-	export { routerCanReuse, routerCanDeactivate, routerOnActivate, routerOnReuse, routerOnDeactivate } from './lifecycle_annotations_impl';
+	import { ComponentInstruction } from 'angular2/src/router/instruction';
+	export { routerCanReuse, routerCanDeactivate, routerOnActivate, routerOnReuse, routerOnDeactivate } from 'angular2/src/router/lifecycle/lifecycle_annotations_impl';
 	/**
 	 * Defines route lifecycle hook `CanActivate`, which is called by the router to determine
 	 * if a component can be instantiated as part of a navigation.
@@ -13373,21 +13373,21 @@ declare module 'angular2/router' {
 	 * @description
 	 * Maps application URLs into application states, to support deep-linking and navigation.
 	 */
-	export { Router } from './src/router/router';
-	export { RouterOutlet } from './src/router/directives/router_outlet';
-	export { RouterLink } from './src/router/directives/router_link';
-	export { RouteParams, RouteData } from './src/router/instruction';
-	export { PlatformLocation } from './src/router/location/platform_location';
-	export { RouteRegistry, ROUTER_PRIMARY_COMPONENT } from './src/router/route_registry';
-	export { LocationStrategy, APP_BASE_HREF } from './src/router/location/location_strategy';
-	export { HashLocationStrategy } from './src/router/location/hash_location_strategy';
-	export { PathLocationStrategy } from './src/router/location/path_location_strategy';
-	export { Location } from './src/router/location/location';
-	export * from './src/router/route_config/route_config_decorator';
-	export * from './src/router/route_definition';
-	export { OnActivate, OnDeactivate, OnReuse, CanDeactivate, CanReuse } from './src/router/interfaces';
-	export { CanActivate } from './src/router/lifecycle/lifecycle_annotations';
-	export { Instruction, ComponentInstruction } from './src/router/instruction';
+	export { Router } from 'angular2/src/router/router';
+	export { RouterOutlet } from 'angular2/src/router/directives/router_outlet';
+	export { RouterLink } from 'angular2/src/router/directives/router_link';
+	export { RouteParams, RouteData } from 'angular2/src/router/instruction';
+	export { PlatformLocation } from 'angular2/src/router/location/platform_location';
+	export { RouteRegistry, ROUTER_PRIMARY_COMPONENT } from 'angular2/src/router/route_registry';
+	export { LocationStrategy, APP_BASE_HREF } from 'angular2/src/router/location/location_strategy';
+	export { HashLocationStrategy } from 'angular2/src/router/location/hash_location_strategy';
+	export { PathLocationStrategy } from 'angular2/src/router/location/path_location_strategy';
+	export { Location } from 'angular2/src/router/location/location';
+	export * from 'angular2/src/router/route_config/route_config_decorator';
+	export * from 'angular2/src/router/route_definition';
+	export { OnActivate, OnDeactivate, OnReuse, CanDeactivate, CanReuse } from 'angular2/src/router/interfaces';
+	export { CanActivate } from 'angular2/src/router/lifecycle/lifecycle_annotations';
+	export { Instruction, ComponentInstruction } from 'angular2/src/router/instruction';
 	export { OpaqueToken } from 'angular2/core';
 	export { ROUTER_PROVIDERS_COMMON } from 'angular2/src/router/router_providers_common';
 	export { ROUTER_PROVIDERS, ROUTER_BINDINGS } from 'angular2/src/router/router_providers';
@@ -13607,9 +13607,9 @@ declare module 'angular2/src/testing/matchers' {
 
 }
 declare module 'angular2/src/testing/testing' {
-	import { FunctionWithParamTokens } from './test_injector';
-	export { inject, injectAsync } from './test_injector';
-	export { expect, NgMatchers } from './matchers';
+	import { FunctionWithParamTokens } from 'angular2/src/testing/test_injector';
+	export { inject, injectAsync } from 'angular2/src/testing/test_injector';
+	export { expect, NgMatchers } from 'angular2/src/testing/matchers';
 	/**
 	 * Run a function (with an optional asynchronous callback) after each test case.
 	 *
@@ -13908,7 +13908,7 @@ declare module 'angular2/src/testing/fake_async' {
 }
 declare module 'angular2/src/mock/view_resolver_mock' {
 	import { Type } from 'angular2/src/facade/lang';
-	import { ViewMetadata } from '../core/metadata';
+	import { ViewMetadata } from 'angular2/src/core/metadata';
 	import { ViewResolver } from 'angular2/src/core/linker/view_resolver';
 	export class MockViewResolver extends ViewResolver {
 	    constructor();
@@ -14036,7 +14036,7 @@ declare module 'angular2/src/mock/mock_application_ref' {
 }
 declare module 'angular2/src/mock/directive_resolver_mock' {
 	import { Type } from 'angular2/src/facade/lang';
-	import { DirectiveMetadata } from '../core/metadata';
+	import { DirectiveMetadata } from 'angular2/src/core/metadata';
 	import { DirectiveResolver } from 'angular2/src/core/linker/directive_resolver';
 	/**
 	 * An implementation of {@link DirectiveResolver} that allows overriding
@@ -14068,10 +14068,10 @@ declare module 'angular2/testing' {
 	 * This module is not included in the `angular2` module; you must import the test module explicitly.
 	 *
 	 */
-	export * from './src/testing/testing';
-	export { ComponentFixture, TestComponentBuilder } from './src/testing/test_component_builder';
-	export * from './src/testing/test_injector';
-	export * from './src/testing/fake_async';
+	export * from 'angular2/src/testing/testing';
+	export { ComponentFixture, TestComponentBuilder } from 'angular2/src/testing/test_component_builder';
+	export * from 'angular2/src/testing/test_injector';
+	export * from 'angular2/src/testing/fake_async';
 	export { MockViewResolver } from 'angular2/src/mock/view_resolver_mock';
 	export { MockXHR } from 'angular2/src/compiler/xhr_mock';
 	export { MockNgZone } from 'angular2/src/mock/ng_zone_mock';
@@ -14307,8 +14307,8 @@ declare module 'angular2/src/animate/browser_details' {
 
 }
 declare module 'angular2/src/animate/animation' {
-	import { BrowserDetails } from './browser_details';
-	import { CssAnimationOptions } from './css_animation_options';
+	import { BrowserDetails } from 'angular2/src/animate/browser_details';
+	import { CssAnimationOptions } from 'angular2/src/animate/css_animation_options';
 	export class Animation {
 	    element: HTMLElement;
 	    data: CssAnimationOptions;
@@ -14392,9 +14392,9 @@ declare module 'angular2/src/animate/animation' {
 
 }
 declare module 'angular2/src/animate/css_animation_builder' {
-	import { CssAnimationOptions } from './css_animation_options';
-	import { Animation } from './animation';
-	import { BrowserDetails } from './browser_details';
+	import { CssAnimationOptions } from 'angular2/src/animate/css_animation_options';
+	import { Animation } from 'angular2/src/animate/animation';
+	import { BrowserDetails } from 'angular2/src/animate/browser_details';
 	export class CssAnimationBuilder {
 	    browserDetails: BrowserDetails;
 	    /** @type {CssAnimationOptions} */
@@ -14461,8 +14461,8 @@ declare module 'angular2/src/animate/css_animation_builder' {
 
 }
 declare module 'angular2/src/animate/animation_builder' {
-	import { CssAnimationBuilder } from './css_animation_builder';
-	import { BrowserDetails } from './browser_details';
+	import { CssAnimationBuilder } from 'angular2/src/animate/css_animation_builder';
+	import { BrowserDetails } from 'angular2/src/animate/browser_details';
 	export class AnimationBuilder {
 	    browserDetails: BrowserDetails;
 	    /**
@@ -14516,9 +14516,9 @@ declare module 'angular2/src/platform/dom/events/event_manager' {
 }
 declare module 'angular2/src/platform/dom/dom_renderer' {
 	import { AnimationBuilder } from 'angular2/src/animate/animation_builder';
-	import { DomSharedStylesHost } from './shared_styles_host';
+	import { DomSharedStylesHost } from 'angular2/src/platform/dom/shared_styles_host';
 	import { Renderer, RootRenderer, RenderComponentType, RenderDebugInfo } from 'angular2/src/core/render/api';
-	import { EventManager } from './events/event_manager';
+	import { EventManager } from 'angular2/src/platform/dom/events/event_manager';
 	export abstract class DomRootRenderer implements RootRenderer {
 	    document: any;
 	    eventManager: EventManager;
@@ -14576,7 +14576,7 @@ declare module 'angular2/src/platform/dom/dom_renderer' {
 
 }
 declare module 'angular2/src/platform/dom/events/dom_events' {
-	import { EventManagerPlugin } from './event_manager';
+	import { EventManagerPlugin } from 'angular2/src/platform/dom/events/event_manager';
 	export class DomEventsPlugin extends EventManagerPlugin {
 	    supports(eventName: string): boolean;
 	    addEventListener(element: HTMLElement, eventName: string, handler: Function): Function;
@@ -14670,7 +14670,7 @@ declare module 'angular2/src/platform/browser/generic_browser_adapter' {
 
 }
 declare module 'angular2/src/platform/browser/browser_adapter' {
-	import { GenericBrowserDomAdapter } from './generic_browser_adapter';
+	import { GenericBrowserDomAdapter } from 'angular2/src/platform/browser/generic_browser_adapter';
 	/**
 	 * A `DomAdapter` powered by full browser DOM APIs.
 	 */
@@ -14810,7 +14810,7 @@ declare module 'angular2/src/platform/browser_common' {
 	export { DOCUMENT } from 'angular2/src/platform/dom/dom_tokens';
 	export { Title } from 'angular2/src/platform/browser/title';
 	export { ELEMENT_PROBE_PROVIDERS, ELEMENT_PROBE_PROVIDERS_PROD_MODE, inspectNativeElement, By } from 'angular2/platform/common_dom';
-	export { BrowserDomAdapter } from './browser/browser_adapter';
+	export { BrowserDomAdapter } from 'angular2/src/platform/browser/browser_adapter';
 	export { enableDebugTools, disableDebugTools } from 'angular2/src/platform/browser/tools/tools';
 	/**
 	 * A set of providers to initialize the Angular platform in a web browser.
